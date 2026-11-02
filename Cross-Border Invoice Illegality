@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_metadata": {
+    "title": "Technical Formalisation: Analysis of Cross-Border Invoice Illegality (Google Cloud EMEA Ltd, An Post, HMRC)",
+    "author": "Swen Werner",
+    "role": "Bevollmächtigter",
+    "entity": "ouroboros13.io",
+    "date": "2026-11-02",
+    "jurisdictions_involved": ["IE", "GB", "EU"],
+    "target_authorities": ["European Commission", "HM Revenue & Customs (HMRC)", "An Post"]
+  },
+  "legal_and_technical_violations": [
+    {
+      "violation_id": "V-ADDR-001",
+      "category": "Address Architecture & Postal Interoperability",
+      "legal_basis": [
+        "Directive 97/67/EC (Postal Services Directive)",
+        "Commission Implementing Decision (EU) 2021/1827",
+        "EN ISO 19160-4:2017 (Addressing – Part 4: International postal address components and template language)",
+        "Universal Postal Union (UPU) Standard S42"
+      ],
+      "entity_subject": "An Post / GeoDirectory / Google Cloud EMEA Limited",
+      "fact_pattern": {
+        "invoice_address_block": {
+          "line_1": "Google Cloud EMEA Limited",
+          "line_2": "Velasco",
+          "line_3": "Clanwilliam Place",
+          "line_4": "Dublin 2",
+          "line_5": "Ireland"
+        },
+        "target_element": "Velasco",
+        "structural_assignment": "Line 2 (preceding thoroughfare)"
+      },
+      "systemic_breakdown_analysis": {
+        "level_1_positional_vs_component_model": {
+          "iso_standard_requirement": "Mandatory assignment of unambiguous semantic identity to each discrete addressing component, independent of sequential position.",
+          "irish_implementation_defect": "Stripping of object qualifiers (e.g., 'House', 'Building'). Reliance on flat sequence logic (Line 2 == building/premise name).",
+          "formal_verdict": "Breach of EN ISO 19160-4:2017 due to substitution of formalized component metadata with a localized positional text convention."
+        },
+        "level_2_cross_border_interoperability": {
+          "technical_defect": "Automated ingestion engines (OCR invoice readers, foreign customs parsers, ERP validation logic) cannot infer local Irish line-order rules.",
+          "parser_failure_mode": "Token 'Velasco' is semantically ambiguous (undifferentiated between addressee extension, personal care-of, c/o entity, or street attribute).",
+          "statutory_consequence": "Direct violation of Implementing Decision (EU) 2021/1827 harmonisation mandate."
+        },
+        "level_3_unlawful_export_of_national_pragmatism": {
+          "source_origin": "An Post / GeoDirectory internal data storage shortcuts.",
+          "commercial_deployment": "Google Cloud EMEA Ltd distributes unvalidated, flat-text address blocks across the European Single Market (EU Binnenmarkt).",
+          "impact": "Propagation of corrupted, non-interoperable address models across cross-border financial transactions."
+        }
+      },
+      "status": "UNLAWFUL_ADDRESS_RECORD"
+    },
+    {
+      "violation_id": "V-TAX-002",
+      "category": "VAT Jurisdiction & Sovereign Retail Tax Collection",
+      "legal_basis": [
+        "Value Added Tax Act 1994 (VATA 1994, UK)",
+        "UK VAT Registration Thresholds (Statutory Period: 2025-04-01 to 2026-03-31; threshold: £90,000)",
+        "Place of Supply of Services Rules (B2C Telecommunications, Broadcasting & Electronic Services)",
+        "Principles of Sovereign Tax Collection"
+      ],
+      "entity_subject": "Google Cloud EMEA Limited / HM Revenue & Customs (HMRC)",
+      "fact_pattern": {
+        "tax_identifier_issued": "IE3668997OH",
+        "tax_type_charged": "Domestic UK VAT",
+        "recipient_status": "Retail Customer (B2C) resident in the United Kingdom",
+        "entity_header": "Google Cloud EMEA Limited (Irish Sovereign Tax Registration)"
+      },
+      "systemic_breakdown_analysis": {
+        "jurisdictional_incoherence": {
+          "irish_vat_authority": "Identifier IE3668997OH possesses tax-collecting authority strictly within Irish sovereign fiscal boundaries.",
+          "uk_domestic_supply": "Where taxable supplies exceed the statutory £90,000 threshold to UK domestic consumers, local UK VAT registration and issuance under a valid UK VAT (GB...) identifier is legally mandatory.",
+          "entity_level_conflation": "Centralised funneling of all EMEA retail transactions through an Irish corporate billing profile without segregating local tax identity."
+        },
+        "audit_trail_incoherence": {
+          "documentary_failure": "Printing a foreign sovereign ID (IE...) while charging domestic UK tax yields a legally void accounting document under international auditing standards.",
+          "algorithmic_proxy_abuse": "Substituting substantive statutory entity compliance with client-side dynamic UI tax calculations.",
+          "regulatory_failure": "HMRC failure to identify, audit, and penalise jurisdictional mismatch in cross-border retail invoice processing."
+        }
+      },
+      "status": "UNLAWFUL_TAX_ISSUANCE"
+    }
+  ],
+  "institutional_assessment": {
+    "google_cloud_emea": "Architectural failure: centralization of legal and physical billing structures over statutory compliance.",
+    "an_post_geodirectory": "Systemic non-conformance with EU/ISO data standards, undermining automated cross-border parsing.",
+    "hmrc": "Regulatory failure to enforce sovereign VAT collection boundaries against multi-jurisdictional automated billing schemes."
+  },
+  "formal_verdict": {
+    "systemic_integrity": "COMPROMISED",
+    "interoperability_status": "BROKEN",
+    "legal_compliance": "NON_COMPLIANT_UNDER_EU_AND_UK_LAW"
+  }
+}
