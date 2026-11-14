@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "date": "2026-11-13",
+    "respondent_type": "Public authority",
+    "organization": "Ministry of Industry and Trade (Czechia)",
+    "role": "National coordinator of IMI for the Czech Republic",
+    "initiative": "Internal market information system (IMI) – revision of EU rules",
+    "initiative_id": "18452",
+    "source_url": "https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/18452-Internal-market-information-system-IMI-revision-of-EU-rules/feedback_en?p_id=26361"
+  },
+  "consultation_submission_summary": {
+    "policy_expansion_and_flexibility": {
+      "core_demand": "More flexible approach to adding new policy areas into IMI to increase long-term legal certainty and encourage system reuse over developing new national or sector-specific solutions.",
+      "constraints_and_safeguards": [
+        "Flexibility must not reduce clarity or concentrate discretion solely with the European Commission.",
+        "Basic legal conditions, competent authorities, and scope of data exchange must remain clearly defined.",
+        "Member States require a strong role in the process leading up to the inclusion of new policy areas."
+      ],
+      "pilot_projects": "Must be strictly limited in time and scope, focusing on a specific, well-defined type of administrative cooperation."
+    },
+    "portals_governance": {
+      "required_definitions": [
+        "Responsibility for portal operation",
+        "Responsibility for content and accuracy of information",
+        "Authority over user access decisions",
+        "Responsibility for handling security incidents",
+        "Relationship between the portal, the IMI system, and national administrative authorities"
+      ],
+      "technical_requirement": "Automated data transfer from the portal into national systems is necessary to achieve actual administrative burden reduction."
+    },
+    "interoperability_and_technology": {
+      "system_integration": "Clearer legal support for interoperability and automated data exchange between IMI, other EU systems, and potentially relevant national systems.",
+      "ai_and_advanced_tech": {
+        "regulatory_approach": "Technology-neutral and flexible to avoid frequent legislative amendments.",
+        "mandatory_safeguards": [
+          "Data protection",
+          "Confidentiality",
+          "Cybersecurity",
+          "Meaningful human oversight",
+          "Clearly defined responsibilities, safeguards, and limits for automated processing"
+        ]
+      }
+    },
+    "scope_of_use_and_data_protection": {
+      "scope_critique": "Current limitation to areas strictly related to the narrowly-defined functioning of the internal market prevents full use of IMI for cross-border administrative cooperation with indirect internal market benefits.",
+      "legislative_updates": "Targeted technical updates reflecting practical operational experience to ensure consistency with current EU data protection legislation (actor responsibilities, data retention periods, data subject rights)."
+    }
+  },
+  "analytical_deconstruction": {
+    "classification": "Algebraic null set / Bureaucratic tautology",
+    "propositional_logic_model": {
+      "primary_contradiction": "A ∧ ¬A ≡ ⊥",
+      "expanded_form": "(A ∧ ¬B) ∧ (B ∧ ¬A) = ∅",
+      "truth_value": 0,
+      "statement_matrix": [
+        {
+          "statement_excerpt": "Bigger flexibility could increase legal certainty...",
+          "formal_expression": "F => C",
+          "critique": "Logical contradiction: flexibility softens rigid norms, thereby reducing static legal certainty by definition."
+        },
+        {
+          "statement_excerpt": "However, flexibility should not mean less clarity...",
+          "formal_expression": "F => ¬(¬C)  [F ∧ C]",
+          "critique": "Wishful thinking lacking a valid operator: demanding administrative discretion that simultaneously operates without discretion."
+        },
+        {
+          "statement_excerpt": "Basic legal conditions should still be clearly defined...",
+          "formal_expression": "Define fixed boundary S",
+          "critique": "Establishes a rigid statutory limit."
+        },
+        {
+          "statement_excerpt": "...while encouraging reuse instead of developing new solutions.",
+          "formal_expression": "¬S",
+          "critique": "Immediately dismantles boundary S to allow arbitrary system expansion."
+        },
+        {
+          "statement_excerpt": "Technology-neutral and flexible... but clearly define limits for automated processing.",
+          "formal_expression": "Allow any T, constrained by dynamic R(T)",
+          "critique": "Circular argument: permitting undefined technologies (e.g., AI) under indeterminate, dynamically adjusted limits."
+        }
+      ]
+    },
+    "constitutional_and_legal_analysis": {
+      "identified_competence_breach": "Demands expanding IMI beyond the internal market competence (Art. 114 TFEU) for general cross-border administrative cooperation solely to save national IT development costs.",
+      "comparative_dossier_context": {
+        "czech_ministry_position": "Non-justiciable administrative rhetoric requesting expansion beyond Art. 114 TFEU limits.",
+        "counter_submission_reference": "F33582815",
+        "counter_submission_basis": [
+          "CJEU Case C-376/98 (Tobacco Advertising I)",
+          "Ultra vires defect analysis of Art. 114 TFEU",
+          "Objection to deletion of Art. 21(2) TFEU fundamental rights safeguards",
+          "Mathematical proof of register inversion"
+        ]
+      }
+    }
+  }
+}
