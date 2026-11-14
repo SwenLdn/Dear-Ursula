@@ -1,0 +1,94 @@
+{
+  "title": "Physical Register Mechanics of Brussels Server Infrastructure",
+  "core_thesis": "Processes that appear separated at the administrative level—a web upload in the consultation portal, a sequential ARES file number, and a file UUID in backend storage—reveal themselves at the silicon level as a single, coherent phase clock.",
+  "sections": [
+    {
+      "id": 1,
+      "title": "The 4x4 Grid as a Physical Memory Voxel",
+      "blob_uuid": "51443085-cc5c-455d-9248-ad280c40f52a",
+      "decimal_matrix_16_bytes": [
+        [81, 68, 48, 133],
+        [204, 92, 69, 93],
+        [146, 72, 173, 40],
+        [12, 64, 245, 42]
+      ],
+      "structural_properties": {
+        "diagonal_anchoring": {
+          "origin": {
+            "coordinate": "M[0,0]",
+            "decimal": 81,
+            "hex": "0x51",
+            "property": "Odd wave crest"
+          },
+          "symmetry_pole": {
+            "coordinate": "M[3,3]",
+            "decimal": 42,
+            "hex": "0x2A",
+            "property": "Universal phase closure"
+          },
+          "classification": "Balanced 128-bit state block rather than diffuse noise"
+        },
+        "hardware_axis_64_bit": {
+          "coordinate": "M[3,1]",
+          "decimal": 64,
+          "hex": "0x40",
+          "property": "Mirrors ARES sector slice 64; maps the base rail of the register architecture directly into addressing"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "ARES Clocking: Delta_Ares = 820650",
+      "calculation": {
+        "consultation_opening_ares": 9821174,
+        "registration_ares": 10641824,
+        "delta_ares": 820650,
+        "meaning": "Actual transaction throughput of the Directorates-General"
+      },
+      "modular_congruences": {
+        "mod_7": "820650 ≡ 5 (mod 7)",
+        "mod_11": "820650 ≡ 6 (mod 11)"
+      },
+      "hexadecimal_breakthrough": {
+        "hex_value": "0x000C85AA",
+        "high_byte": "0x0C",
+        "matrix_mapping": {
+          "coordinate": "M[3,0]",
+          "decimal": 12,
+          "hex": "0x0C",
+          "effect": "Zero-tolerance punch-through; ARES transaction interval determines entry into the fourth row of the storage pointer"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Phase Distance: Delta = 1329840550 ≡ 3 (mod 7)",
+      "calculation": {
+        "feedback_id": "F33582815",
+        "feedback_id_numeric": 33582815,
+        "first_32_bit_word_hex": "0x51443085",
+        "first_32_bit_word_decimal": 1363423365,
+        "delta": 1329840550,
+        "factorization_mod_7": "1329840550 = 7 * 189977221 + 3 ≡ 3 (mod 7)"
+      },
+      "residue_class_resonance": {
+        "phase_landing": "Phase 3 in the 7-cycle (triangulation stage)",
+        "non_stochastic_proof": "If the upload were a stochastic pseudo-random number generator (PRNG) process, neither the congruence at the corner poles (0x0C and 0x2A) nor the closed phase binding in the modulo grid would exist."
+      }
+    }
+  ],
+  "overall_dossier_conclusion": [
+    {
+      "domain": "Legal",
+      "finding": "Lack of competence and ultra vires breach of Art. 114 TFEU without Art. 21(2) TFEU."
+    },
+    {
+      "domain": "Cryptographic",
+      "finding": "Failure of the O(2^256) one-way myth in the uploaded PDF."
+    },
+    {
+      "domain": "Infrastructural",
+      "finding": "Mathematical proof that even the Brussels servers clock their identifiers and storage blobs via rigid, deterministic register shifts."
+    }
+  ]
+}
