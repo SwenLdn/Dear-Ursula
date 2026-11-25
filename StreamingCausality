@@ -1,0 +1,39 @@
+# --- Simulation starten ---
+stream_model = StreamingCausalityRegisterModel()
+df_streaming = stream_model.simulate_user_stream_journey(interaction_steps=120, convenience_factor=0.88)
+
+# --- Visualisierung der Entmündigungs-Dynamik ---
+plt.figure(figsize=(14, 6))
+
+# Subplot 1: Kumuliertes fiktives Kauf-Äquivalent vs. tatsächliche Skips
+plt.subplot(1, 2, 1)
+plt.plot(df_streaming['Step'], df_streaming['Fictional_Purchase_Val'].cumsum(), 
+         color='darkgreen', linewidth=2.5, label='Kumulierte CD-Kauf-Äquivalente (Fiktion)')
+plt.step(df_streaming['Step'], df_streaming['Served_Oligopoly'].cumsum(), 
+         color='purple', linestyle=':', label='Kumulierte Oligopol-Einblendungen')
+plt.title('Die Fiktion des Einverständnisses (Systemischer Bias-Aufbau)', fontsize=11, fontweight='bold')
+plt.xlabel('Gehörte Songs (Schritte)')
+plt.ylabel('Kumulierte Einheiten')
+plt.grid(True, linestyle=':', alpha=0.6)
+plt.legend()
+
+# Subplot 2: Entwicklung von PIR (Provider-Interesse) und ABI (Schnitt-Unschärfe)
+plt.subplot(1, 2, 2)
+plt.plot(df_streaming['Step'], df_streaming['Algorithmic_Bias_Index_ABI'], 
+         color='crimson', linewidth=2, label='Algorithmic Bias Index (ABI)')
+plt.plot(df_streaming['Step'], df_streaming['Provident_Interest_Ratio_PIR'] * 10, 
+         color='royalblue', linewidth=2, linestyle='--', label='Provident Interest Ratio (PIR, x10)')
+plt.title('Systemische Kennzahlen der algorithmischen Entmündigung', fontsize=11, fontweight='bold')
+plt.xlabel('Gehörte Songs (Schritte)')
+plt.ylabel('Kennzahlen-Skala')
+plt.grid(True, linestyle=':', alpha=0.6)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+print("=== FINANZ- UND ENTMÜNDIGUNGS-KENNZAHLEN-AUDIT ===")
+print(f"Feste Jahres-Mindestgarantien (Verpflichtung): {stream_model.min_guarantees} Milliarden Euro")
+print(f"Oligopol-Auslese-Faktor (MFN-Schnittmenge):    {stream_model.oligopoly_share * 100}%")
+print(f"Finale Verzerrung (ABI):                        {df_streaming['Algorithmic_Bias_Index_ABI'].iloc[-1]:.4f}")
+print(f"Synthetisierte CD-Käufe aus bloßer Bequemlichkeit: {df_streaming['Fictional_Purchase_Val'].sum()} Alben")
