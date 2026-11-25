@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "protocol": "Ouroboros 13 / Phase Geometry",
+    "series": "w149ss",
+    "a_systematik_tag": "Inzidentelle Erfassungs-Logik",
+    "platform": "LinkedIn",
+    "url": "https://lnkd.in/p/eb6JhsmK",
+    "timestamp_captured": "2026-11-25T14:37:00+01:00",
+    "relative_post_time": "jetzt"
+  },
+  "author": {
+    "name": "Swen Werner",
+    "role": "Bevollmächtigter ouroboros13.io",
+    "connection_degree": "Sie",
+    "copyright_holder": "Swen Werner"
+  },
+  "content": {
+    "language": "en-GB",
+    "text": "Wherein lies the distinction between England and Germany? In Germany, one is not relentlessly interrogated in the course of legal and commercial dealings as to one's racial affiliation and sexual proclivities! Carry on oppressing!",
+    "hashtags": [
+      "#England",
+      "#RuleOfLaw",
+      "#Freedom",
+      "#CommonSense"
+    ]
+  },
+  "analysis": {
+    "jurisdictional_comparison": [
+      "England",
+      "Germany"
+    ],
+    "key_themes": [
+      "Legal and commercial dealings (Rechtsverkehr)",
+      "Interrogation regarding racial affiliation",
+      "Interrogation regarding sexual proclivities",
+      "Rule of Law",
+      "Freedom"
+    ],
+    "risk_matrix": {
+      "framework": "UK Equality Act 2010 / Data Integrity",
+      "protected_characteristics_referenced": [
+        "Race (Racial affiliation)",
+        "Sexual orientation (Sexual proclivities)"
+      ],
+      "deviation_classification": "Targeted Symmetry Deviation / +5 Interference",
+      "compliance_status": "Critical / Non-Standard Service Logic Interrogation"
+    }
+  }
+}
