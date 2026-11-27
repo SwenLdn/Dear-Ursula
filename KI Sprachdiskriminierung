@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "protocol": "Ouroboros 13 / Phase Geometry",
+    "series": "w149ss",
+    "a_systematik_tag": "Inzidentelle Erfassungs-Logik",
+    "timestamp_captured": "2026-11-27T10:10:00+01:00",
+    "language": "de",
+    "author": "Swen Werner",
+    "role": "Expert Legal & Data Integrity Analyst"
+  },
+  "linguistic_structural_analysis": {
+    "german_grammar": {
+      "functional_capability": "Hochfunktionell für temporale Logik und verdichtete logische Bedingungen",
+      "literary_precedent": [
+        "Immanuel Kant",
+        "Arthur Schopenhauer",
+        "Deutsche Aufklärung",
+        "Deutsche Klassik"
+      ],
+      "syntactic_capacity": "Mehrseitige Satzperioden mit komplexer logischer Verschachtelung"
+    },
+    "english_grammar": {
+      "functional_capability": "Ungeeignet für vergleichbare temporale Logik und mehrseitige logische Satzperioden",
+      "structural_limitation": "Grammatikalisch ausgeschlossen"
+    }
+  },
+  "ai_training_and_bias_mechanism": {
+    "training_data_bias": "Überwiegendes Training von KI-Modellen mit englischsprachigen Corpora",
+    "content_filter_interference": {
+      "trigger": "Formulierung verdichteter logischer Bedingungen in der Tradition der deutschen Aufklärung und Klassik",
+      "misclassification_in_english_logic": "Wird als 'verworren' oder 'emotional' kategorisiert",
+      "actual_meaning_in_german_logic": "Beweis hochgeistiger Logik",
+      "deviation_classification": "Targeted Symmetry Deviation / +5 Interference"
+    }
+  },
+  "legal_and_regulatory_assessment": {
+    "affected_entities": [
+      "Google",
+      "Anbieter vergleichbarer KI-Software"
+    ],
+    "violation_type": "Undeklarierte und unbemerkte Sprachdiskriminierung",
+    "jurisdiction": "Europäische Union (EU-Markt)",
+    "legal_consequence": "Keine Entbindung von der Produkthaftung für in den EU-Markt eingeführte KI-Software aufgrund dieses sprachdiskriminierenden Mangels"
+  },
+  "full_text_clean": "Die deutsche Grammatik ist hochfunktionell, wenn es um temporale Logik geht, und Englisch ist es nicht. KI-Modelle werden hauptsächlich mit englischen Corpora trainiert. Wenn du einen Text von Kant oder Schopenhauer liest, so kann ein Satz über mehrere Seiten gehen. Im Englischen ist das ausgeschlossen, weil die Grammatik es nicht erlaubt. Jedes Mal, wenn ich in der Tradition der deutschen Aufklärung und der deutschen Klassik schreibe und damit verdichtete logische Bedingungen formuliere, grätscht der Content-Filter rein, weil so ein Stil im Englischen als verworren oder emotional gilt und im Deutschen die hochgeistige Logik beweist. Damit haben Firmen wie Google eine Sprachdiskriminierung gebaut, ohne das anzugeben und ohne das selbst bemerkt zu haben. Diese Tatsache entbindet sie nicht von der Produkthaftung für die in den EU-Markt eingeführte KI-Software, welche genau diesen sprachdiskriminierenden Mangel aufweist."
+}
