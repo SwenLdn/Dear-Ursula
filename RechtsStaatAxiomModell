@@ -1,0 +1,83 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class RechtsStaatAxiomModell:
+    """
+    Modelliert die systemische Degradierung des klassischen Rechtsstaates (Rule of Law)
+    hin zum digitalen Feudalismus durch die Einführung zeitvariabler AGB-Kontrollparameter.
+    """
+    def __init__(self):
+        self.t = np.linspace(0, 50, 1000)  # Zeithorizont der Epochen-Verschiebung
+
+    def simuliere_systemzerfall(self) -> tuple:
+        """
+        Berechnet die zeitlichen Ableitungen der Invarianzbedingungen.
+        """
+        # Berechenbarkeit der Spielregeln (Invarianz dC/dt): Fällt im digitalen Zeitalter drastisch ab
+        berechenbarkeit = np.exp(-0.08 * self.t)
+        
+        # Willkürindex (Einfluss einseitiger Potestativentscheidungen)
+        willkuer = 1.0 - berechenbarkeit
+        
+        # Systemische Entropie (Verlust des Rechtsfriedens)
+        system_entropie = 1.0 - np.exp(-0.05 * self.t) + 0.05 * np.random.randn(len(self.t))
+        system_entropie = np.clip(system_entropie, 0.0, 1.0)
+        
+        return berechenbarkeit, willkuer, system_entropie
+
+# --- Simulation des Epochenübergangs ---
+axiom_system = RechtsStaatAxiomModell()
+berechenbarkeit, willkuer, entropie = axiom_system.simuliere_systemzerfall()
+
+# --- Visualisierung des Rechtszerfalls ---
+fig, ax1 = plt.subplots(figsize=(13, 7))
+
+# Achse 1: Berechenbarkeit vs. Willkür
+color = 'darkgreen'
+ax1.set_xlabel('Zeitlicher Verlauf der Epochen (t)', fontsize=11)
+ax1.set_ylabel('Invarianz-Grad / Berechenbarkeit', color=color, fontsize=11)
+ax1.plot(axiom_system.t, berechenbarkeit, color=color, linewidth=3, label='Berechenbarkeit der Schranken ($\\partial \\mathcal{C}/\\partial t \\to 0$)')
+ax1.tick_params(axis='y', labelcolor=color)
+
+# Achse 2: System-Entropie (Verlust des Rechtsfriedens)
+ax2 = ax1.twinx()
+color = 'crimson'
+ax2.set_ylabel('Willkür-Grad / Systemische Entropie', color=color, fontsize=11)
+ax2.plot(axiom_system.t, willkuer, color='firebrick', linewidth=2.5, linestyle='--', label='Willkür-Grad (Potestativkraft $\\mathcal{P}(t)$)')
+ax2.plot(axiom_system.t, entropie, color='crimson', alpha=0.4, label='Verlust des Rechtsfriedens (System-Entropie)')
+ax2.tick_params(axis='y', labelcolor=color)
+
+# Epochen-Zonen einteilen
+ax1.axvline(x=15.0, color='gray', linestyle=':')
+ax1.text(2.0, 0.1, "Klassische Epoche:\nVertragstreue, Invarianz", fontsize=10, bbox=dict(facecolor='white', alpha=0.8))
+ax1.text(18.0, 0.1, "Digitale Transformation:\nPlattformen übernehmen Definition", fontsize=10, bbox=dict(facecolor='white', alpha=0.8))
+
+ax1.set_title("Das Axiomatische Dilemma: Vom klassischen Rechtsstaat zum digitalen Feudalismus", fontsize=13, fontweight="bold", pad=15)
+fig.tight_layout()
+plt.show()
+
+# --- Manifest der Rechtslogischen Invarianten ---
+df_manifest = pd.DataFrame({
+    "Axiom": [
+        "1. Das Invarianz-Axiom",
+        "2. Das Synallagma-Axiom",
+        "3. Das Intersubjektivitäts-Axiom",
+        "4. Das Zwangsmittel-Axiom"
+    ],
+    "Mathematische Bedingung": [
+        "dC/dt = 0 und do/dt = 0 (Konstanz des vertraglichen Leistungsobjekts)",
+        "Leistung L_A steht in unlösbarer Kopplung zu L_B (Keine einseitige Leistungs-Annullierung)",
+        "Eigenschaften müssen messbar und entscheidbar sein (Keine psychologischen Schein-Variablen)",
+        "Gewaltbefugnis ist strikt an unhintergehbare, wissenschaftliche Beweiskraft gebunden"
+    ],
+    "Verrat durch moderne Plattform-AGBs": [
+        "Gebrochen. Das Objekt (z.B. der Song) wird durch iOS-Updates und DRM-Entzug zeitlich variabel.",
+        "Gebrochen. Apple kassiert den Vollpreis, behält sich aber das Recht vor, die Gegenleistung auf Null zu setzen.",
+        "Gebrochen. Arbiträre Diagnosen der Psyche und willkürliche Plattform-Kriterien ersetzen exakte Parameter.",
+        "Gebrochen. Gerichte legitimieren die Zwangsgewalt der Tech-Konzerne über die privaten Endgeräte der Nutzer."
+    ]
+})
+
+print("\n=== DEKLARATION DES MANIFESTS DER RECHTSLOGISCHEN INVARIANTEN ===")
+display(df_manifest)
