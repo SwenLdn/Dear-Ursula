@@ -1,0 +1,33 @@
+import pandas as pd
+
+platform_breach_data = [
+    {
+        "Juristischer Tatbestand": "1. Asymmetrie der Lizenzkette (Nemo dat quod non habet)",
+        "B2B-Einkaufsebene (Apple / Label)": "Spezifische, deterministische Befristung (z. B. 01.01.2015 bis 31.12.2025). Genaue Kenntnis des Ablaufdatums.",
+        "B2C-Verkaufsebene (Apple / Endkunde)": "Unspezifischer, zeitlich unbestimmter Schein-'KAUF' zum Vollpreis. Befristung wird vorsätzlich verschwiegen.",
+        "Systemischer Rechtsbruch": "Vorsätzliche Täuschung über die Beschaffenheit des Gutes. Verkauf eines Rechts, das der Verkäufer selbst zeitlich nicht besitzt."
+    },
+    {
+        "Juristischer Tatbestand": "2. Reine Potestativbedingung (Einseitiges Bestimmungsrecht)",
+        "B2B-Einkaufsebene (Apple / Label)": "Kaufmännische Gewinnabwägung über Vertragsverlängerung oder Lizenzgebühren.",
+        "B2C-Verkaufsebene (Apple / Endkunde)": "Klausel: 'Zugriff kann jederzeit entschädigungslos eingestellt werden, falls Apple die Rechte verliert'.",
+        "Systemischer Rechtsbruch": "Einseitiger Leistungsvorbehalt setzt Erfüllung allein unter den Willen des Schuldners. Rechtliches Nullum wegen Sittenwidrigkeit."
+    },
+    {
+        "Juristischer Tatbestand": "3. Bruch des Synallagmas (Lack of Consideration)",
+        "B2B-Einkaufsebene (Apple / Label)": "Festes Austauschverhältnis (Marge gegen zeitweise Nutzungsrechte).",
+        "B2C-Verkaufsebene (Apple / Endkunde)": "Erhalt des vollen Geldwertes sofort vs. flüchtige, jederzeit widerrufbare Gegenleistung ohne Mindestdauer.",
+        "Systemischer Rechtsbruch": "Vollständiger Entzug der Gegenleistung nach unbestimmter Zeit ohne Entschädigung bricht das fundamentale Austauschprinzip ('do ut des')."
+    },
+    {
+        "Juristischer Tatbestand": "4. Deliktischer Eingriff durch Software-Update",
+        "B2B-Einkaufsebene (Apple / Label)": "Entzug der Verwertungsrechte im Apple-Ökosystem.",
+        "B2C-Verkaufsebene (Apple / Endkunde)": "Nachträglicher, unbemerkt durchgeführter Zugriff auf das private Endgerät zur Sperrung bereits geladener Daten.",
+        "Systemischer Rechtsbruch": "Physischer Raubzug im digitalen Gewand. Manipulation der lokalen Kundendatenbank ohne Einverständnis zur Verschleierung von Apples Haftung."
+    }
+]
+
+df_platform_breach_analysis = pd.DataFrame(platform_breach_data)
+pd.set_option('display.max_colwidth', None)
+
+display(df_platform_breach_analysis)
