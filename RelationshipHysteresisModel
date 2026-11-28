@@ -1,0 +1,100 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+class RelationshipHysteresisModel:
+    """
+    Formalisiert das Sitcom-Dilemma: Die Asymmetrie zwischen dem kontinuierlichen
+    Kopplungs-Vektor (geteiltes Leben, Intimität) und dem diskreten sozialen Label.
+    Identisch mit der Struktur des Apple-AGB-Modells.
+    """
+    def __init__(self):
+        self.labels = ["Bekannte", "Casual / Situationship", "Exklusiv / Dating", "Feste Partnerschaft", "Ehe / Formal"]
+
+    def simulate_relationship_dynamics(self, steps=30, label_denial_step=12):
+        """
+        Simuliert die Entwicklung der realen Kopplung und des Beziehungsfriedens.
+        Ab 'label_denial_step' fordert ein Partner alle Attribute einer festen Beziehung ein,
+        weigert sich jedoch, das dazugehörige formale Label zu akzeptieren.
+        """
+        t = np.arange(steps)
+        
+        # 1. Reale Kopplung x(t): Wächst kontinuierlich (gemeinsame Zeit, emotionales Investment)
+        reale_kopplung = 1.0 / (1.0 + np.exp(-0.25 * (t - 10))) * 100.0
+        
+        # 2. Das erwartete Label basierend auf der realen Kopplung (Soll-Zustand)
+        soll_label_idx = []
+        for val in reale_kopplung:
+            if val < 20: soll_label_idx.append(0) # Bekannte
+            elif val < 45: soll_label_idx.append(1) # Casual
+            elif val < 70: soll_label_idx.append(2) # Dating
+            elif val < 90: soll_label_idx.append(3) # Partnerschaft
+            else: soll_label_idx.append(4) # Ehe / Formal
+            
+        # 3. Das tatsächlich gewährte Label (Ist-Zustand unter Potestativ-Willkür)
+        ist_label_idx = []
+        for step in t:
+            if step < label_denial_step:
+                ist_label_idx.append(soll_label_idx[step])
+            else:
+                # Blockade: Weigerung, über das "Casual"-Label hinauszugehen ("Keine Labels bitte!")
+                ist_label_idx.append(min(1, soll_label_idx[step]))
+                
+        # 4. Berechnung des Beziehungsfriedens (Phi_Beziehung)
+        # Der Friede sinkt proportional zur Diskrepanz zwischen realer Kopplung (Anspruch) und verweigertem Label
+        beziehungsfriede = []
+        for step in t:
+            diskrepanz = abs(soll_label_idx[step] - ist_label_idx[step])
+            phi = max(0.0, 1.0 - (diskrepanz * 0.3)) 
+            beziehungsfriede.append(phi)
+            
+        return t, reale_kopplung, np.array(soll_label_idx), np.array(ist_label_idx), np.array(beziehungsfriede)
+
+# --- Simulation starten ---
+model = RelationshipHysteresisModel()
+t, kopplung, soll_label, ist_label, phi_beziehung = model.simulate_relationship_dynamics()
+
+# Systemische Äquivalenztabelle erstellen
+equivalence_data = {
+    "Systemischer Parameter": [
+        "1. Das Kontinuum (Phasenraum)",
+        "2. Der angebotene Zustand (Lockvogel)",
+        "3. Der Willkürvorbehalt (Kleingedrucktes)",
+        "4. Der systemische Kollaps (Entropie)"
+    ],
+    "Zivilrecht (BGB / Apple-Szenario)": [
+        "Vollständiger Kaufpreis bezahlt, Musikdatei permanent auf lokaler Festplatte gelagert.",
+        "Der 'KAUFEN'-Button suggeriert unbegrenztes, unantastbares Eigentum.",
+        "AGB-Klausel: 'Es handelt sich nur um eine flüchtige, jederzeit kündbare Lizenz.'",
+        "Rechtsfriede bricht zusammen (Phi -> 0). Konsument verliert das Gut rechtlos."
+    ],
+    "Beziehungsdynamik (Sitcom-Dilemma)": [
+        "Vollwertiges Zusammenleben, gemeinsame Urlaube, geteilter Schlüssel, emotionale Exklusivität.",
+        "Das Verhalten signalisiert absolut verbindliche, feste Partnerschaft.",
+        "Beziehungs-AGB: 'Lass uns das unverbindlich halten, ich will keine starren Labels.'",
+        "Beziehungsfriede bricht zusammen. Permanente Instabilität, Streit und emotionaler Bankrott."
+    ]
+}
+
+df_equivalence = pd.DataFrame(equivalence_data)
+display(df_equivalence)
+
+# Visualisierung der Hysterese und des Beziehungsfriedens
+fig, ax1 = plt.subplots(figsize=(11, 5.5))
+
+color = 'tab:blue'
+ax1.set_xlabel('Zeitlicher Verlauf (t)')
+ax1.set_ylabel('Reale Kopplungsintensität (%)', color=color)
+ax1.plot(t, kopplung, color=color, linewidth=2.5, label="Reale Kopplung (Miete, Zeit, Intimität)")
+ax1.tick_params(axis='y', labelcolor=color)
+ax1.grid(True, linestyle=':', alpha=0.6)
+
+ax2 = ax1.twinx()
+color = 'tab:red'
+ax2.set_ylabel(r'Index des sozialen Friedens ($\Phi$)', color=color)
+ax2.plot(t, phi_beziehung, color=color, linewidth=3, linestyle='--', label="Beziehungsfriede (\\Phi_Beziehung)")
+ax2.tick_params(axis='y', labelcolor=color)
+
+plt.title("Die universelle Hysterese der Bindung: Wenn Verhalten und Label divergieren")
+fig.tight_layout()
+plt.show()
